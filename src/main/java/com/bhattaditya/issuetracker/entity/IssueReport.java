@@ -10,7 +10,7 @@ public class IssueReport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String description;
     private String email;
     private IssueStatus status;
@@ -18,18 +18,18 @@ public class IssueReport {
     public IssueReport() {
     }
 
-    public IssueReport(String id, String description, String email, IssueStatus status) {
+    public IssueReport(Long id, String description, String email, IssueStatus status) {
         this.id = id;
         this.description = description;
         this.email = email;
         this.status = status;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

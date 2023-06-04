@@ -8,8 +8,7 @@ import java.time.LocalDateTime;
 public class Assignee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private String  id;
     private String name;
     private String email;
     private Unit workingUnit;
@@ -27,6 +26,7 @@ public class Assignee {
         this.employeeSince = employeeSince;
         this.numberOfActiveIssues = numberOfActiveIssues;
     }
+
 
     public String getId() {
         return id;
@@ -74,5 +74,17 @@ public class Assignee {
 
     public void setNumberOfActiveIssues(Integer numberOfActiveIssues) {
         this.numberOfActiveIssues = numberOfActiveIssues;
+    }
+
+    @Override
+    public String toString() {
+        return "Assignee{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", workingUnit=" + workingUnit +
+                ", employeeSince=" + employeeSince +
+                ", numberOfActiveIssues=" + numberOfActiveIssues +
+                '}';
     }
 }

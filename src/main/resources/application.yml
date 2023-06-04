@@ -1,0 +1,13 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    username: root
+    password: Aditya844
+    url: jdbc:mysql://localhost:3306/issuetracker
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none

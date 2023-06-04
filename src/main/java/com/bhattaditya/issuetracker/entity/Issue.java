@@ -1,8 +1,6 @@
 package com.bhattaditya.issuetracker.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
@@ -11,7 +9,6 @@ import java.time.LocalDateTime;
 public class Issue {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String description;
     private Unit unit;
@@ -87,5 +84,18 @@ public class Issue {
 
     public void setStatus(IssueStatus status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Issue{" +
+                "id='" + id + '\'' +
+                ", description='" + description + '\'' +
+                ", unit=" + unit +
+                ", reportedOn=" + reportedOn +
+                ", updatedOn=" + updatedOn +
+                ", email='" + email + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
