@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AssigneeServiceImpl implements AssigneeService {
@@ -22,7 +23,8 @@ public class AssigneeServiceImpl implements AssigneeService {
 
     @Override
     public List<Assignee> fetchAssignees(Unit unit) {
-        return null;
+        List<Assignee> assigneeList = assigneeRepository.findAll();
+        return assigneeList.stream().filter(assignee -> unit.equals(assignee.getWorkingUnit())).filter(assignee -> assignee.getNumberOfActiveIssues() < 3).toList();
     }
 
     @Override

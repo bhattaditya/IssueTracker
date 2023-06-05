@@ -87,4 +87,5 @@ public class IssueTrackerApplication implements CommandLineRunner {
 //        List<Issue> issues = issueRepository.findAll();
 //        System.out.println(issues);
     }
+
 }
